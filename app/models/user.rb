@@ -5,4 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :roles
+
+  def cached_roles
+    Rails.cache.fetch "user.#{self.id}.roles" do
+      roles.pluck(:name)
+    end
+  end
+
+  def clear_cached_roles
+    Rails.cache.delete "user.#{self.id}.roles"
+  end
 end

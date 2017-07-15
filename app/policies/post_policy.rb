@@ -18,10 +18,10 @@ class PostPolicy < ApplicationPolicy
     end
 
     def admin?
-      user.roles.pluck(:name).include? 'admin'
+      user.cached_roles.include? 'admin'
     end
 
     def reader?
-      user.roles.pluck(:name).include? 'reader'
+      user.cached_roles.include? 'reader'
     end
 end
