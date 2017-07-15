@@ -1,1 +1,1 @@
-# q45113760-user-role-information-in-session
+[question](https://stackoverflow.com/questions/45113760/how-to-customise-devise-to-store-user-role-information-in-session)
