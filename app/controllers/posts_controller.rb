@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: :index
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    authorize @post
   end
 
   # GET /posts/new
@@ -19,6 +21,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    authorize @post, :update?
   end
 
   # POST /posts
@@ -28,7 +31,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: t('posts.create') }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -40,9 +43,11 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    authorize @post
+
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: t('posts.update') }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -54,9 +59,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    authorize @post
+
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_path, notice: t('posts.destroy') }
       format.json { head :no_content }
     end
   end

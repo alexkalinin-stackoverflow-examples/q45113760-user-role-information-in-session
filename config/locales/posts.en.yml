@@ -1,0 +1,5 @@
+en:
+  posts:
+    update: 'Post was successfully updated.'
+    destroy: 'Post was successfully destroyed.'
+    create: 'Post was successfully created.'

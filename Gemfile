@@ -42,6 +42,11 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'pry-doc'
   gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_girl'
+  gem 'capybara'
+  gem 'ffaker'
+  gem 'database_cleaner'
 end
 
 group :development do

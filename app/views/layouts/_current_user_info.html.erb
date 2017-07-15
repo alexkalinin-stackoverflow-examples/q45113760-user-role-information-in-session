@@ -1,0 +1,12 @@
+<div class="current-user">
+
+<% if current_user %>
+    Current user is: <%= current_user.email %>;
+    Roles: <%= current_user.roles.pluck(:name).join(', ') %>
+    <%= link_to 'Logout?', destroy_user_session_path, method: :delete %>
+<% else %>
+    Current user is not logged in!
+    <%= link_to 'Login?', new_user_session_path %>
+<% end %>
+
+</div>
