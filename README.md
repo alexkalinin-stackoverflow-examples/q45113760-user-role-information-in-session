@@ -2,7 +2,7 @@
 
 ### Solutions
 
-See [Pull Requests](pulls) diffs and it's branches to view solution. 
+See [Pull Requests](https://github.com/alexkalinin-stackoverflow-examples/q45113760-user-role-information-in-session/pulls?utf8=%E2%9C%93&q=is%3Apr%20) diffs and it's branches to view solution. 
 
 ### Setup
 
