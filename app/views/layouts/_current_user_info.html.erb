@@ -1,8 +1,9 @@
 <div class="current-user">
 
 <% if current_user %>
-    Current user is: <%= current_user.email %>;
-    Roles: <%= current_user.roles.pluck(:name).join(', ') %>
+    Current user is: <%= current_user.email %> |
+    Roles: <%= current_user.roles.pluck(:name).join(', ') %> |
+    Cached roles: <%= current_user.cached_roles&.join(', ') || '<empty>' %>
     <%= link_to 'Logout?', destroy_user_session_path, method: :delete %>
 <% else %>
     Current user is not logged in!
