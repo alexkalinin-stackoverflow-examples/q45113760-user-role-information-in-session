@@ -1,5 +1,9 @@
 [question](https://stackoverflow.com/questions/45113760/how-to-customise-devise-to-store-user-role-information-in-session)
 
+### Solutions
+
+See [Pull Requests](pulls) diffs and it's branches to view solution. 
+
 ### Setup
 
 ```
